@@ -1,0 +1,62 @@
+
+
+<div class="w3-container" *ngIf="studentDetail">
+	<div class="w3-panel w3-round-small w3-red">
+		<h3><i class="fa fa-id-card"></i> Student Details <button [routerLink]="['/update', index]" class="w3-button w3-white custom-button"> <i class="fa fa-edit"></i> Edit</button> <button routerLink="/" class="w3-button w3-white custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i> Back</button></h3>
+	</div>
+	<div class=" w3-card custom-card"><br>
+		
+		<h3 class="text-center">{{studentDetail.first_name}} {{studentDetail.last_name}}</h3>
+		
+		<hr>
+		<table class="w3-table w3-bordered">
+			<tr>
+				<td><i class="fa fa-id-badge" style="font-size:24px"></i> Roll Number</td>
+				<td>: <b>{{studentDetail.roll_no}}</b></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-user-circle-o" style="font-size:24px"></i> First Name</td>
+				<td>: <b>{{studentDetail.first_name}}</b></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-user-circle" style="font-size:24px"></i> Last name</td>
+				<td>: <b>{{studentDetail.last_name}}</b></td>
+			</tr>
+
+			<tr>
+				<td><i class="fa fa-calendar-o" style="font-size:24px"></i> Birthday</td>
+				<td>: <b>{{studentDetail.DOB}}</b></td>
+			</tr>
+
+			<tr>
+				<td><i class="fa fa-user-o" style="font-size:24px"></i>
+					Father's Name</td>
+				<td>: <b>{{studentDetail.father_name}}</b></td>
+			</tr>
+
+			<tr>
+				<td><i class="fa fa-user-o" style="font-size:24px"></i>
+					Mother's Name</td>
+				<td>: <b>{{studentDetail.mother_name}}</b></td>
+			</tr>
+			
+			<tr>
+				<td><i class="fa fa-mobile-phone" style="font-size:36px"></i> Mobile</td>
+				<td>: <b>{{studentDetail.phone}}</b></td>
+			</tr>
+
+			<tr>
+				<td><i class="fa fa-at" style="font-size:24px"></i> Email ID</td>
+				<td>: <b>{{studentDetail.email}}</b></td>
+			</tr>
+			
+            <tr>
+				<td><i class="fa fa-address-book-o" style="font-size:24px"></i>
+					Address</td>
+				<td>: <b>{{studentDetail.address}}</b></td>
+			</tr>
+		    
+		</table>
+	</div>
+</div>
+

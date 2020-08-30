@@ -1,0 +1,20 @@
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:250px;" id="mySidebar">
+  <img src="assets/24.png" class="logo">
+	
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-blue': (active == '/')}" routerLink="/"> 
+		<i class="fa fa-user-o"></i>  Student Data</a>
+	<a class="w3-bar-item w3-button" routerLink="/add"  [ngClass]="{'w3-green': (active == '/add')}"> 
+		<i class="fa fa-book"></i>  Add New Student</a>
+	<a class="w3-bar-item w3-button" routerLink="/references"  [ngClass]="{'w3-orange': (active == '/references')}">
+		 <i class='fas fa-book-open'></i> References</a>
+	<a class="w3-bar-item w3-button" (click)="logOut()">
+		<i class="w3-medium fa fa-sign-out"></i>Sign Out</a>
+</nav>
+
+<div class="w3-main" style="margin-left:250px;">
+	<div class="w3-container">
+	
+		<router-outlet></router-outlet>
+	</div>
+</div>
+

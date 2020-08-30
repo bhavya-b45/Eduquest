@@ -1,0 +1,49 @@
+
+
+<div class="w3-container" *ngIf="studentAddForm">
+	<form class="w3-container" [formGroup]="studentAddForm" (ngSubmit)="doRegister()">
+	<div class="w3-panel w3-round-small w3-green">
+		<h3><i class="fa fa-pencil-square-o"></i> <span *ngIf="index == undefined"> Student Registration</span><span *ngIf="index != undefined">Student Update</span> <a routerLink="/" class="w3-button w3-white custom-button"><i class="w3-medium fa fa-chevron-left"></i> Back</a></h3>
+	</div>
+		
+	<label class="w3-text-green"><i class="fa fa-id-badge" ></i><b> Roll Number</b></label>
+	<input class="w3-input w3-border" type="number" formControlName="roll_no">
+	<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.roll_no.invalid && (studentAddForm.controls.roll_no.dirty || studentAddForm.controls.roll_no.touched)">Please enter valid roll number</div> 
+	  
+		<label class="w3-text-green"><i class="fa fa-user-o" ></i><b> First Name</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="first_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.first_name.invalid && (studentAddForm.controls.first_name.dirty || studentAddForm.controls.first_name.touched)">Please enter 3 to 50 characters</div> 
+
+		<label class="w3-text-green"><i class="fa fa-user-o" ></i><b> Last Name</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="last_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.last_name.invalid && (studentAddForm.controls.last_name.dirty || studentAddForm.controls.last_name.touched)">Please enter  3 to 50 characters </div> 
+
+		<label class="w3-text-green"><i class="fa fa-user-o" ></i><b> Father's Name</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="father_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.father_name.invalid && (studentAddForm.controls.father_name.dirty || studentAddForm.controls.father_name.touched)">Please enter 3 to 50 characters</div> 
+
+		<label class="w3-text-green"><i class="fa fa-user-o"></i><b> Mother's Name</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="mother_name">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.mother_name.invalid && (studentAddForm.controls.mother_name.dirty || studentAddForm.controls.mother_name.touched)">Please enter 3 to 50 characters</div> 
+
+		<label class="w3-text-green"><i class="fa fa-mobile-phone" style="font-size:24px"></i><b> Phone Number</b></label>
+		<input class="w3-input w3-border" type="number" formControlName="phone">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.phone.invalid && (studentAddForm.controls.phone.dirty || studentAddForm.controls.phone.touched)">Please enter valid phone number</div> 
+
+		<label class="w3-text-green"><i class="w3-medium custom-icon fa fa-envelope-open"></i><b> Email ID</b></label>
+		<input class="w3-input w3-border" type="text" formControlName="email">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.email.invalid && (studentAddForm.controls.email.dirty || studentAddForm.controls.email.touched)">Please enter valid email address</div> 
+
+		<label class="w3-text-green"><i class="fa fa-calendar-o"></i><b> DOB</b></label>
+		<input class="w3-input w3-border" type="date" min="1990-01-01" max="2020-01-30" formControlName="DOB">
+		<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.DOB.invalid && (studentAddForm.controls.DOB.dirty || studentAddForm.controls.DOB.touched)">Please enter valid DOB</div> 
+
+		<label class="w3-text-green"><i class="fa fa-address-book-o"></i><b> Address</b></label>
+	<input class="w3-input w3-border" type="textarea" formControlName="address">
+	<div class="w3-panel w3-red"  *ngIf="studentAddForm.controls.address.invalid && (studentAddForm.controls.address.dirty || studentAddForm.controls.address.touched)">Please enter valid address</div> 
+		<br>
+		<button class="w3-btn w3-green" type="submit" [disabled]="!studentAddForm.valid"><span *ngIf="index == undefined">Register</span><span *ngIf="index != undefined">Update</span> <i class="w3-medium fa fa-check"></i> </button>
+
+	</form>
+</div>
+
